@@ -39,6 +39,8 @@ use slavkovrn\prettyphoto\PrettyPhotoWidget;
 <?= PrettyPhotoWidget::widget([
     'id'     =>'prettyPhoto',   // id of plugin should be unique at page
     'class'  =>'galary',        // class of plugin to define a style
+    'width' => '50%',           // width of image visible in widget (omit - initial width)
+    'height' => '100px',        // height of image visible in widget (omit - initial height)
     'images' => [               // images at popup window of prettyPhoto galary
                     1 => [
                             'src' => 'http://yii2.kadastrcard.ru/uploads/prettyphoto/image1.jpg',

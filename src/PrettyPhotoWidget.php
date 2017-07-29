@@ -9,6 +9,8 @@ class PrettyPhotoWidget extends Widget {
     
     public $id = 'prettyphoto';
     public $class='galary';
+    public $width='';
+    public $height='';
     public $images=[];
 
     public function init() {
@@ -26,6 +28,8 @@ class PrettyPhotoWidget extends Widget {
         return $this->render('prettyphoto',[
             'id' => $this->id,
             'class' => $this->class,
+            'width' => $this->width,
+            'height' => $this->height,
             'images' => $this->images,
         ]);
     }
