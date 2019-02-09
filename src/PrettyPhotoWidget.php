@@ -12,6 +12,7 @@ class PrettyPhotoWidget extends Widget {
     public $width='';
     public $height='';
     public $images=[];
+    private $loader='';
 
     public function init() {
 
@@ -39,21 +40,15 @@ class PrettyPhotoWidget extends Widget {
         $path = \Yii::$app->getAssetManager()->publish(__DIR__ . '/assets/');
 
         $this->getView()->registerCssFile($path[1] . '/css/prettyPhoto.css');
+        $this->loader=$path[1].'/img/loader.gif';
 
-        $this->getView()->registerJsFile(
-            $path[1] . '/js/jquery.prettyPhoto.min.js',
-            [
-                'position' => \yii\web\View::POS_END,
-                'depends'  => ['\yii\web\JqueryAsset'],
-            ]
-        );
-        $this->getView()->registerJsFile(
-            $path[1] . '/js/jquery.prettyPhoto.init.min.js',
-            [
-                'position' => \yii\web\View::POS_END,
-                'depends'  => ['\yii\web\JqueryAsset'],
-            ]
-        );
+        $this->getView()->registerJsFile($path[1] . '/js/jquery.js');
+        $this->getView()->registerJsFile($path[1] . '/js/jquery.prettyPhoto.min.js');
+        $this->getView()->registerJsFile($path[1] . '/js/jquery.prettyPhoto.init.min.js');
+
+        $script = '$(function() { $.noConflict(true); });';
+
+        //$this->getView()->registerJs($script,\yii\web\View::POS_END);
     }
 
 }
