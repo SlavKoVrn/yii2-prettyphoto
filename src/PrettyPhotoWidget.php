@@ -45,7 +45,6 @@ class PrettyPhotoWidget extends Widget {
         $this->getView()->registerJsFile($path[1] . '/js/jquery.js');
         $this->getView()->registerJsFile($path[1] . '/js/jquery.prettyPhoto.min.js');
         $this->getView()->registerJsFile($path[1] . '/js/jquery.prettyPhoto.init.min.js');
-
     }
 
 }
